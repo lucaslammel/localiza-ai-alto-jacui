@@ -1,0 +1,218 @@
+INSERT INTO cidade (nome, uf) VALUES ('Alto Alegre', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Arroio do Tigre', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Boa Vista do Incra', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Campos Borges', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Carazinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Chapada', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Colorado', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Cruz Alta', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ernestina', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Espumoso', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Estrela Velha ', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Fortaleza dos Valos', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ibarama', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ibirapuitã', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ibirubá', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Jacuizinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Júlio de Castilhos', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Lagoa dos Três Cantos', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Lagoão', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Marau', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Mato Castelhano', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Mormaço', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Não-Me-Toque', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Nicolau Vergueiro', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Passa Sete', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Passo Fundo', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Pinhal Grande', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Quinze de Novembro', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Saldanha Marinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Salto do Jacuí', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Santa Bárbara do Sul', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Santo Antônio do Planalto', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Segredo ', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Selbach', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Sobradinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Soledade', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tapera', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tio Hugo', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tunas', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tupanciretã', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Victor Graeff', 'RS');
+
+UPDATE cidade SET nome='Alto Alegre', uf='RS' WHERE cod = 1;
+SELECT * FROM cidade WHERE cod = 1;
+DELETE FROM cidade WHERE cod = 1;
+
+
+
+
+
+
+
+INSERT INTO ponto_turistico (obs, periodo, valor, nome, descr, hist, cap, long, lat) 
+VALUES ('', 'Ano Todo', 20.00,'Museu Municipal Theobaldo Becker', 'É patrono do Museu. Theobaldo Becker, que. ao longo de sua vida, liderou movimentos em prol do crescimento de Ibirubá, sendo através de sua cultura, postura ética e conhecimentos técnicos, referência na história do município. Foi um líder na comunidade “evangélica e escolar”, representando os interesses da comunidade como vereador nos anos de 1955 a 1969. Presente em empreendimentos sociais e culturais, deixou seu legado cultural, que é reverenciado através da homenagem prestada pelo Município, que o elegeu patrono do Museu.
+O Museu Municipal Theobaldo Becker inicialmente ocupou o prédio onde anteriormente residia a família de Theobaldo Becker e pertencia à Cotribá, que o cedeu no período de setembro de 1986 a 04 de janeiro de 1994.
+Em 07 de março de 1994, foi reaberto junto à Biblioteca Pública Municipal, na Rua Dumoncel Filho, onde permaneceu até meados de 2011, tendo na maior parte deste período ficado sob a coordenação de Regina Trein.
+Com um projeto de releitura visual em 03 de abril de 2012, reabriu suas portas ao público na Rua Getúlio Vargas esquina com a Rua Júlio Rosa, num espaço de maior facilidade de acesso aos visitantes, unindo conceitos do moderno e do antigo; de proteção e preservação, tendo como símbolo a pitangueira, fruto da árvore símbolo do município.
+O Museu conta com uma sala de exposição permanente do acervo e uma sala de apoio, onde é guardado o acervo reserva. Além destas, há também as vitrines externas para divulgação da história das entidades e empresas ibirubenses mais antigas: Cotribá, Vence Tudo e Coprel.
+O Museu Municipal Theobaldo Becker tem como missão reunir, documentar, pesquisar, conservar, e divulgar com fins educativos, sociais e culturais e de deleite, levando em conta a valorização e o resgate da história local, dentro da perspectiva de um museu para todos.
+O Museu Municipal Theobaldo Becker possui registro no IBRAM (Instituto Brasileiro de Museus) e no SEM/RS (Sistema Estadual de Meseus do Rio Grande do Sul). Faz parte da 3° Região Museológica que implementa através de reuniões online ações conjuntas, sendo a mais recente a página do Facebook da 3° Região Museológica, que a comunidade ibirubense pode curtir acompanhando assim as ações dos museus da nossa região.
+O Museu promove ações culturais e exposições ao longo do ano: Exposição da Evolução Histórica de Ibirubá durante a Semana no Município (fevereiro-março), Semana dos Museus (maio), Viajando pela Rota (agosto), Primavera dos Museus (setembro), Aniversário do Museu (20 de setembro), União Faz a Vida – Sicredi (durante todo ano), visitas guiadas e orientadas às turmas de escolares visitantes, pesquisando acervo específico, atendimento individual a pesquisadores e visitantes, bem como registro, manutenção, limpeza, preservação e pesquisa do acervo.
+Em 2020, como estamos vivendo a pandemia de Covid-19, por orientação do IBRAM e SEM/RS, o Museu está trabalhando com expediente interno ou home office. Desenvolve atividades em ambiente virtual como um vídeo institucional na Semana dos Museus (18 a 24/05), divulgação do Museu na imprensa local na Primavera de Museus (21 a 27 de setembro), assessoramento cultural a pessoas da comunidade, imprensa, estudantes universitários, professores para elaborar suas aulas online, mediante agendamento (54) 9.9211-2928, não havendo atendimento presencial ao público.
+O órgão está sob a coordenação da professora de História Ivanisa Coréti Lenz, responsável pelo atendimento e pela realização dos trabalhos na instituição.
+', 'O Museu Municipal Theobaldo Becker, de Ibirubá, foi criado pelo Projeto de Lei nº 830/86 e inaugurado no dia 20 de setembro de 1986.
+Idealizado pelo prefeito municipal da época, Olando Kanitz, foi implementado pelo então secretário municipal de Educação e Cultura, Rudi Schweig, e organizado pela professora Roseli Binsfeld que, desenvolvendo uma série de ações de caráter técnico e administrativo, alcançou a função primordial de preservação e comunicação daquilo que nos une e nos remete a uma lembrança pessoal e coletiva.', 50, -28.631048926356712, -53.09498206431661);
+
+UPDATE ponto_turistico SET obs = '', periodo = 'verão', valor = 10.00, nome = 'Museu Municipal Theobaldo Becker', descr = 'Museu de Ibirubá', hist = 'Fundado dia 20 de setembro de 1986.', cap = 25, long = -28.631048926356712, lat = -53.09498206431661 WHERE cod = 1;
+SELECT * FROM ponto_turistico WHERE cod = 1;
+DELETE FROM ponto_turistico WHERE cod = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO contato (tipo, url) VALUES ('Facebook', 'https://www.facebook.com');
+
+UPDATE contato SET tipo = 'Instagram', url = 'https://www.instagram.com' WHERE cod = 1;
+SELECT * FROM contato WHERE cod = 1;
+DELETE FROM contato WHERE cod = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO cont_pt (cod_pt, cod_cont) VALUES (1, 1);
+
+UPDATE cont_pt SET cod_pt = 1, cod_cont = 2 WHERE cod_pt = 1 AND cod_cont = 1;
+SELECT * FROM cont_pt WHERE cod_pt = 1 AND cod_cont = 1;
+DELETE FROM cont_pt WHERE cod_pt = 1 AND cod_cont = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO categoria (nome) VALUES ('Restaurante');
+INSERT INTO categoria (nome) VALUES ('Museu');
+INSERT INTO categoria (nome) VALUES ('Parque');
+INSERT INTO categoria (nome) VALUES ('Natureza');
+INSERT INTO categoria (nome) VALUES ('Outro');
+
+UPDATE categoria SET nome = 'Restaurante'WHERE cod = 1;
+SELECT * FROM categoria WHERE cod = 1;
+DELETE FROM categoria WHERE cod = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 1);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (2, 1);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 2);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (2, 2);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (3, 3);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 4);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (4, 4);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (3, 5);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (4, 5);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 5);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 6);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (2, 6);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (3, 6);
+
+UPDATE cat_pt SET cod_cat = 3 WHERE cod_pt = 1 AND cod_cat = 1;
+SELECT * FROM cat_pt WHERE cod_pt = 1 AND cod_cat = 1;
+DELETE FROM cat_pt WHERE cod_pt = 1 AND cod_cat = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-fa568dafc87e8bcd04708549b925788b.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-d4576b3b305e1df6f8ef4517ec2f9615.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-9b05a6eb1b45ee9db16db89d9920e83f.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-21e7e8f50a5b741e792859d619d992f9.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-a3f56a0320d24252230b51897be7bc2c.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-5b876162b0b50fa70a42c6883ba62e0e.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-02c6e994bef59a0a424c9eb3d80c5d98.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-3b1d6f7fe2a5d5c152722eacbe1c367e.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-26178767bb0eb3bcb547bbc1b9560d03.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-d29aaa0b9cd402b4bfe2395a805f9ada.png');
+
+UPDATE imagem SET nome = 'imagem.jpg' WHERE cod = 1;
+SELECT * FROM imagem WHERE cod = 1;
+DELETE FROM imagem WHERE cod = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO endereco (cod_cidade, cod_pt, rua, numero, bairro, cep) VALUES (1, 1, 'Rua Getulio Vargas', 614, 'Centro', 98200000);
+
+UPDATE endereco SET cod_cidade = 15, cod_pt = 1, rua = 'Rua Getulio Vargas', numero = 614, bairro = 'Centro', cep = 98200000 WHERE cod = 1;
+SELECT * FROM endereco WHERE cod = 1;
+DELETE FROM endereco WHERE cod = 1;
+
+
+
+
+
+
+
+
+INSERT INTO funcionamento (cod_pt, dia, inicio, fim) VALUES (1, 'Segunda', '06:30:00', '12:30:00');
+
+UPDATE funcionamento SET dia = 'Terca', inicio = '06:30:00', fim = '11:30:00' WHERE cod = 1;
+SELECT * FROM funcionamento WHERE cod = 1;
+DELETE FROM funcionamento WHERE cod = 1;

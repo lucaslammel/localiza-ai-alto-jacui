@@ -1,0 +1,126 @@
+create table cidade (
+	cod serial not null,
+	nome varchar(30) not null,
+	uf char(2)not null,
+	constraint pk_cidade primary key (cod)
+);
+
+create table endereco(
+	cod serial not null,
+	cod_cidade integer not null,
+	rua varchar(50) not null,
+	numero smallint not null,
+	bairro varchar(50) not null,
+	cep numeric(8) not null,
+	constraint pk_endereco primary key(cod),
+	constraint fk_endereco_cidade foreign key (cod_cidade) references cidade (cod),
+	constraint fk_endereco_pt foreign key (cod_pt) references ponto_turistico (cod)
+);
+
+
+create table ponto_turistico(
+	cod serial not null,
+	cod_end integer not null,
+	obs varchar(100),
+	periodo varchar(50) not null,
+	valor money not null,
+	nome varchar(60) not null,
+	descr varchar,
+	hist varchar,
+	cap integer not null,
+	long decimal(11,8) not null,
+	lat decimal(10,8) not null,
+	constraint pk_ponto_turistico primary key (cod)
+	constraint fk_pt_end foreign key (cod_end) references endereco (cod)
+
+);
+
+create table contato(
+	cod serial not null,
+	tipo varchar(15) not null,
+	url varchar not null,
+	constraint pk_contato primary key (cod)
+);
+
+create table cont_pt(
+	cod_cont integer not null,
+	cod_pt integer not null,
+	constraint pk_cont_pt primary key (cod_cont, cod_pt),
+	constraint fk_cod_cont foreign key (cod_cont) references contato (cod),
+	constraint fk_cod_pt foreign key (cod_pt) references ponto_turistico (cod)
+);
+
+create table categoria(
+	cod serial not null,
+	nome varchar(30),
+	constraint pk_categoria primary key (cod)
+);
+
+create table cat_pt(
+	cod_cat integer not null,
+	cod_pt integer not null,
+	constraint pk_cat_pt primary key (cod_cat, cod_pt),
+	constraint fk_cod_cat foreign key (cod_cat) references categoria (cod),
+	constraint fk_cod_pt foreign key (cod_pt) references ponto_turistico (cod)
+);
+
+create table imagem(
+	cod serial not null,
+	cod_pt integer not null,
+	nome varchar(50) not null,
+	constraint pk_imagens primary key (cod),
+	constraint fk_imagens_pt foreign key (cod_pt) references ponto_turistico (cod)
+);
+
+
+
+create table funcionamento(
+	cod serial not null,
+	cod_pt integer not null,
+	dia varchar(10) not null, 
+	inicio time not null,
+	fim time not null,
+	constraint pk_funcionamento primary key (cod),
+	constraint fk_func_pt foreign key (cod_pt) references ponto_turistico (cod)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
