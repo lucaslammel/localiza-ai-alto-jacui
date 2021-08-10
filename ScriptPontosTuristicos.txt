@@ -1,91 +1,87 @@
-create table cidade (
-	cod serial not null,
-	nome varchar(30) not null,
-	uf char(2)not null,
-	constraint pk_cidade primary key (cod)
+CREATE TABLE IF NOT EXISTS cidade (
+	cod SERIAL NOT NULL,
+	nome VARCHAR(30) NOT NULL,
+	uf char(2)NOT NULL,
+	CONSTRAINT pk_cidade PRIMARY KEY (cod)
 );
 
-create table endereco(
-	cod serial not null,
-	cod_cidade integer not null,
-	rua varchar(50) not null,
-	numero smallint not null,
-	bairro varchar(50) not null,
-	cep numeric(8) not null,
-	constraint pk_endereco primary key(cod),
-	constraint fk_endereco_cidade foreign key (cod_cidade) references cidade (cod),
-	constraint fk_endereco_pt foreign key (cod_pt) references ponto_turistico (cod)
-);
-
-
-create table ponto_turistico(
-	cod serial not null,
-	cod_end integer not null,
-	obs varchar(100),
-	periodo varchar(50) not null,
-	valor money not null,
-	nome varchar(60) not null,
-	descr varchar,
-	hist varchar,
-	cap integer not null,
-	long decimal(11,8) not null,
-	lat decimal(10,8) not null,
-	constraint pk_ponto_turistico primary key (cod)
-	constraint fk_pt_end foreign key (cod_end) references endereco (cod)
-
-);
-
-create table contato(
-	cod serial not null,
-	tipo varchar(15) not null,
-	url varchar not null,
-	constraint pk_contato primary key (cod)
-);
-
-create table cont_pt(
-	cod_cont integer not null,
-	cod_pt integer not null,
-	constraint pk_cont_pt primary key (cod_cont, cod_pt),
-	constraint fk_cod_cont foreign key (cod_cont) references contato (cod),
-	constraint fk_cod_pt foreign key (cod_pt) references ponto_turistico (cod)
-);
-
-create table categoria(
-	cod serial not null,
-	nome varchar(30),
-	constraint pk_categoria primary key (cod)
-);
-
-create table cat_pt(
-	cod_cat integer not null,
-	cod_pt integer not null,
-	constraint pk_cat_pt primary key (cod_cat, cod_pt),
-	constraint fk_cod_cat foreign key (cod_cat) references categoria (cod),
-	constraint fk_cod_pt foreign key (cod_pt) references ponto_turistico (cod)
-);
-
-create table imagem(
-	cod serial not null,
-	cod_pt integer not null,
-	nome varchar(50) not null,
-	constraint pk_imagens primary key (cod),
-	constraint fk_imagens_pt foreign key (cod_pt) references ponto_turistico (cod)
+CREATE TABLE IF NOT EXISTS endereco(
+	cod SERIAL NOT NULL,
+	cod_cidade INTEGER NOT NULL,
+	rua VARCHAR(50) NOT NULL,
+	numero smallint NOT NULL,
+	bairro VARCHAR(50) NOT NULL,
+	cep numeric(8) NOT NULL,
+	CONSTRAINT pk_endereco PRIMARY KEY(cod),
+	CONSTRAINT fk_endereco_cidade FOREIGN KEY (cod_cidade) REFERENCES cidade (cod)
 );
 
 
+CREATE TABLE IF NOT EXISTS ponto_turistico(
+	cod SERIAL NOT NULL,
+	cod_end INTEGER NOT NULL,
+	obs VARCHAR(100),
+	periodo VARCHAR(50) NOT NULL,
+	valor decimal(4,2) NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	descr text NOT NULL,
+	hist text NOT NULL,
+	cap INTEGER NOT NULL,
+	longi decimal(11,8) NOT NULL,
+	latit decimal(10,8) NOT NULL,
+	CONSTRAINT pk_ponto_turistico PRIMARY KEY (cod),
+	CONSTRAINT fk_pt_end FOREIGN KEY (cod_end) REFERENCES endereco (cod)
 
-create table funcionamento(
-	cod serial not null,
-	cod_pt integer not null,
-	dia varchar(10) not null, 
-	inicio time not null,
-	fim time not null,
-	constraint pk_funcionamento primary key (cod),
-	constraint fk_func_pt foreign key (cod_pt) references ponto_turistico (cod)
+);
+
+CREATE TABLE IF NOT EXISTS contato(
+	cod SERIAL NOT NULL,
+	tipo VARCHAR(15) NOT NULL,
+	url VARCHAR(255) NOT NULL,
+	CONSTRAINT pk_contato PRIMARY KEY (cod)
+);
+
+CREATE TABLE IF NOT EXISTS cont_pt(
+	cod_cont INTEGER NOT NULL,
+	cod_pt INTEGER NOT NULL,
+	CONSTRAINT pk_cont_pt PRIMARY KEY (cod_cont, cod_pt),
+	CONSTRAINT fk_cod_cont FOREIGN KEY (cod_cont) REFERENCES contato (cod),
+	CONSTRAINT fk_cod_pt FOREIGN KEY (cod_pt) REFERENCES ponto_turistico (cod)
+);
+
+CREATE TABLE IF NOT EXISTS categoria(
+	cod SERIAL NOT NULL,
+	nome VARCHAR(30),
+	CONSTRAINT pk_categoria PRIMARY KEY (cod)
+);
+
+CREATE TABLE IF NOT EXISTS cat_pt(
+	cod_cat INTEGER NOT NULL,
+	cod_pt INTEGER NOT NULL,
+	CONSTRAINT pk_cat_pt PRIMARY KEY (cod_cat, cod_pt),
+	CONSTRAINT fk_cod_cat FOREIGN KEY (cod_cat) REFERENCES categoria (cod),
+	CONSTRAINT fk_cod_pt FOREIGN KEY (cod_pt) REFERENCES ponto_turistico (cod)
+);
+
+CREATE TABLE IF NOT EXISTS imagem(
+	cod SERIAL NOT NULL,
+	cod_pt INTEGER NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	CONSTRAINT pk_imagens PRIMARY KEY (cod),
+	CONSTRAINT fk_imagens_pt FOREIGN KEY (cod_pt) REFERENCES ponto_turistico (cod)
 );
 
 
 
+CREATE TABLE IF NOT EXISTS funcionamento(
+	cod SERIAL NOT NULL,
+	cod_pt INTEGER NOT NULL,
+	dia VARCHAR(10) NOT NULL, 
+	inicio time NOT NULL,
+	fim time NOT NULL,
+	CONSTRAINT pk_funcionamento PRIMARY KEY (cod),
+	CONSTRAINT fk_func_pt FOREIGN KEY (cod_pt) REFERENCES ponto_turistico (cod)
+);
 
 
 
@@ -107,6 +103,149 @@ create table funcionamento(
 
 
 
+INSERT INTO cidade (nome, uf) VALUES ('Alto Alegre', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Arroio do Tigre', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Boa Vista do Incra', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Campos Borges', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Carazinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Chapada', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Colorado', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Cruz Alta', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ernestina', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Espumoso', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Estrela Velha ', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Fortaleza dos Valos', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ibarama', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ibirapuitã', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Ibirubá', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Jacuizinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Júlio de Castilhos', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Lagoa dos Três Cantos', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Lagoão', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Marau', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Mato Castelhano', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Mormaço', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Não-Me-Toque', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Nicolau Vergueiro', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Passa Sete', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Passo Fundo', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Pinhal Grande', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Quinze de Novembro', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Saldanha Marinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Salto do Jacuí', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Santa Bárbara do Sul', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Santo Antônio do Planalto', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Segredo ', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Selbach', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Sobradinho', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Soledade', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tapera', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tio Hugo', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tunas', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Tupanciretã', 'RS');
+INSERT INTO cidade (nome, uf) VALUES ('Victor Graeff', 'RS');
+
+
+
+
+
+
+
+INSERT INTO endereco (cod_cidade, rua, numero, bairro, cep) VALUES (1, 'Rua Getulio Vargas', 614, 'Centro', 98200000);
+
+
+
+
+
+INSERT INTO ponto_turistico (cod_end, obs, periodo, valor, nome, descr, hist, cap, longi, latit) 
+VALUES (1, '', 'Ano Todo', 20.00,'Museu Municipal Theobaldo Becker', 'O Museu Municipal Theobaldo Becker tem como missão reunir, documentar, pesquisar, conservar, e divulgar com fins educativos, sociais e culturais e de deleite, levando em conta a valorização e o resgate da história local, dentro da perspectiva de um museu para todos.
+O Museu Municipal Theobaldo Becker possui registro no IBRAM (Instituto Brasileiro de Museus) e no SEM/RS (Sistema Estadual de Meseus do Rio Grande do Sul). Faz parte da 3° Região Museológica que implementa através de reuniões online ações conjuntas, sendo a mais recente a página do Facebook da 3° Região Museológica, que a comunidade ibirubense pode curtir acompanhando assim as ações dos museus da nossa região.
+O Museu promove ações culturais e exposições ao longo do ano: Exposição da Evolução Histórica de Ibirubá durante a Semana no Município (fevereiro-março), Semana dos Museus (maio), Viajando pela Rota (agosto), Primavera dos Museus (setembro), Aniversário do Museu (20 de setembro), União Faz a Vida – Sicredi (durante todo ano), visitas guiadas e orientadas às turmas de escolares visitantes, pesquisando acervo específico, atendimento individual a pesquisadores e visitantes, bem como registro, manutenção, limpeza, preservação e pesquisa do acervo.
+Em 2020, como estamos vivendo a pandemia de Covid-19, por orientação do IBRAM e SEM/RS, o Museu está trabalhando com expediente interno ou home office. Desenvolve atividades em ambiente virtual como um vídeo institucional na Semana dos Museus (18 a 24/05), divulgação do Museu na imprensa local na Primavera de Museus (21 a 27 de setembro), assessoramento cultural a pessoas da comunidade, imprensa, estudantes universitários, professores para elaborar suas aulas online, mediante agendamento (54) 9.9211-2928, não havendo atendimento presencial ao público.
+O órgão está sob a coordenação da professora de História Ivanisa Coréti Lenz, responsável pelo atendimento e pela realização dos trabalhos na instituição.
+', 'O Museu Municipal Theobaldo Becker, de Ibirubá, foi criado pelo Projeto de Lei nº 830/86 e inaugurado no dia 20 de setembro de 1986.
+Idealizado pelo prefeito municipal da época, Olando Kanitz, foi implementado pelo então secretário municipal de Educação e Cultura, Rudi Schweig, e organizado pela professora Roseli Binsfeld que, desenvolvendo uma série de ações de caráter técnico e administrativo, alcançou a função primordial de preservação e comunicação daquilo que nos une e nos remete a uma lembrança pessoal e coletiva.', 50, -28.631048926356712, -53.09498206431661);
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO contato (tipo, url) VALUES ('Facebook', 'https://www.facebook.com');
+
+
+
+
+
+
+
+
+
+INSERT INTO cont_pt (cod_pt, cod_cont) VALUES (1, 1);
+
+
+
+
+
+
+
+
+INSERT INTO categoria (nome) VALUES ('Restaurante');
+INSERT INTO categoria (nome) VALUES ('Museu');
+INSERT INTO categoria (nome) VALUES ('Parque');
+INSERT INTO categoria (nome) VALUES ('Natureza');
+INSERT INTO categoria (nome) VALUES ('Outro');
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 1);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (2, 1);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 2);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (2, 2);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (3, 3);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 4);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (4, 4);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (3, 5);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (4, 5);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 5);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (1, 6);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (2, 6);
+INSERT INTO cat_pt (cod_cat, cod_pt) VALUES (3, 6);
+
+
+
+
+
+
+
+
+
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-fa568dafc87e8bcd04708549b925788b.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-d4576b3b305e1df6f8ef4517ec2f9615.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-9b05a6eb1b45ee9db16db89d9920e83f.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-21e7e8f50a5b741e792859d619d992f9.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-a3f56a0320d24252230b51897be7bc2c.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-5b876162b0b50fa70a42c6883ba62e0e.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-02c6e994bef59a0a424c9eb3d80c5d98.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-3b1d6f7fe2a5d5c152722eacbe1c367e.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-26178767bb0eb3bcb547bbc1b9560d03.png');
+INSERT INTO imagem (cod_pt, nome) VALUES (1, '1-d29aaa0b9cd402b4bfe2395a805f9ada.png');
 
 
 
@@ -124,3 +263,5 @@ create table funcionamento(
 
 
 
+
+INSERT INTO funcionamento (cod_pt, dia, inicio, fim) VALUES (1, 'Segunda', '06:30:00', '12:30:00');
