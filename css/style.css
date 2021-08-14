@@ -32,19 +32,13 @@
 /*----------------------------------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
-html,
-body {
+html, body {
 	height: 100%;
 	font-family: "DM Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 600;
@@ -88,22 +82,17 @@ img {
 	max-width: 100%;
 }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+input:focus, select:focus, button:focus, textarea:focus {
 	outline: none;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
 	text-decoration: none;
 	outline: none;
 	color: #ffffff;
 }
 
-ul,
-ol {
+ul, ol {
 	padding: 0;
 	margin: 0;
 }
@@ -140,16 +129,7 @@ ol {
 	padding-bottom: 100px;
 }
 
-.text-white h1,
-.text-white h2,
-.text-white h3,
-.text-white h4,
-.text-white h5,
-.text-white h6,
-.text-white p,
-.text-white span,
-.text-white li,
-.text-white a {
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6, .text-white p, .text-white span, .text-white li, .text-white a {
 	color: #fff;
 }
 
@@ -2849,8 +2829,7 @@ ol {
 	.slicknav_nav ul {
 		margin: 0;
 	}
-	.slicknav_nav .slicknav_row,
-	.slicknav_nav a {
+	.slicknav_nav .slicknav_row, .slicknav_nav a {
 		padding: 7px 0;
 		margin: 0;
 		color: #ffffff;
@@ -3155,8 +3134,7 @@ ol {
 	.slicknav_nav ul {
 		margin: 0;
 	}
-	.slicknav_nav .slicknav_row,
-	.slicknav_nav a {
+	.slicknav_nav .slicknav_row, .slicknav_nav a {
 		padding: 7px 0;
 		margin: 0;
 		color: #ffffff;
